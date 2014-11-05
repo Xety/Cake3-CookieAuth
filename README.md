@@ -1,4 +1,4 @@
-# Cake3 Sluggable
+# Cake3 CookieAuth
 A simple Cake3 plugin to authenticate users with Cookies. This plugin is based on the awesome plugin [FriendsOfCake/Authenticate](https://github.com/FriendsOfCake/Authenticate/tree/cake3) but with a different setup.
 
 [![Build Status](https://img.shields.io/travis/Xety/Cake3-CookieAuth.svg?style=flat-square)](https://travis-ci.org/Xety/Cake3-CookieAuth)
