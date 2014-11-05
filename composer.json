@@ -1,0 +1,38 @@
+{
+	"name": "xety/cake3-cookieauth",
+	"type": "cakephp-plugin",
+	"description": "A simple Cake3 plugin to authenticate users with Cookies.",
+	"keywords": ["cakephp", "cake3", "plugin", "cookie", "auth", "authenticate", "login"],
+	"homepage": "https://github.com/Xety/Cake3-CookieAuth",
+	"license": "MIT",
+	"support":{
+		"source":"https://github.com/Xety/Cake3-CookieAuth",
+		"issues":"https://github.com/Xety/Cake3-CookieAuth/issues"
+	},
+	"authors": [
+		{
+			"name": "Xety",
+			"email": "zoro.fmt@gmail.com",
+			"homepage": "https://github.com/Xety"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"cakephp/plugin-installer": "*"
+	},
+	"require-dev": {
+		"cakephp/cakephp": "3.0.*-dev",
+		"phpunit/phpunit": "4.1.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Xety\\Cake3CookieAuth\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Xety\\Cake3CookieAuth\\Test\\": "tests"
+		}
+	}
+
+}
