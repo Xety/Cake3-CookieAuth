@@ -4,6 +4,7 @@ namespace Xety\Cake3CookieAuth\Test\TestCase\Auth;
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
+use Cake\Event\Event;
 use Cake\I18n\Time;
 use Cake\Network\Request;
 use Cake\Network\Session;
@@ -135,12 +136,13 @@ class CookieAuthenticateTest extends TestCase {
 			'CookieAuth',
 			['username' => 'Mariano', 'password' => 'password']
 		);
+		$event = new Event('Auth.logout');
 		$user = $this->auth->authenticate($this->request, $this->response);
 
 		$resultTrue = $this->registry->Cookie->check('CookieAuth');
 		$this->assertTrue($resultTrue);
 
-		$this->auth->logout($user);
+		$this->auth->logout($event, $user);
 		$resultFalse = $this->registry->Cookie->check('CookieAuth');
 		$this->assertFalse($resultFalse);
 	}
