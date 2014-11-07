@@ -4,6 +4,7 @@ namespace Xety\Cake3CookieAuth\Auth;
 use Cake\Auth\BaseAuthenticate;
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Component\CookieComponent;
+use Cake\Event\Event;
 use Cake\Network\Request;
 use Cake\Network\Response;
 
