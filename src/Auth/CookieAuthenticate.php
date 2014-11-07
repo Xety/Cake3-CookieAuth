@@ -54,13 +54,25 @@ class CookieAuthenticate extends BaseAuthenticate {
 	}
 
 /**
+ * Returns a list of all events that this authenticate class will listen to.
+ *
+ * @return array
+ */
+	public function implementedEvents() {
+		return [
+			'Auth.logout' => 'logout'
+		];
+	}
+
+/**
  * Delete cookies when an user logout.
  *
+ * @param \Cake\Event\Event  $event The logout Event.
  * @param array $user The user about to be logged out.
  *
  * @return void
  */
-	public function logout(array $user) {
+	public function logout(Event $event, array $user) {
 		$this->_registry->Cookie->delete('CookieAuth');
 	}
 }
