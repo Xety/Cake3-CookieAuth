@@ -38,7 +38,6 @@ class CookieAuthenticateTest extends TestCase {
 		Security::salt('Xety-Cake3CookieAuth_Xety-Cake3CookieAuth');
 		$this->registry = new ComponentRegistry(new Controller($this->request, $this->response));
 		$this->registry->load('Cookie');
-		$this->registry->load('Session');
 		$this->registry->load('Auth');
 		$this->auth = new CookieAuthenticate($this->registry);
 
@@ -118,7 +117,7 @@ class CookieAuthenticateTest extends TestCase {
 		$this->_registry->load('Cookie');
 		$this->_auth = new CookieAuthenticate($this->_registry);
 
-		$this->assertTrue($this->_registry->loaded('Cookie'));
+		$this->assertTrue($this->_registry->has('Cookie'));
 
 		$this->_registry->unload('Cookie');
 
