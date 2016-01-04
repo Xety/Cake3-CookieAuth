@@ -66,10 +66,10 @@ class CookieAuthenticateTest extends TestCase
      */
     public function testAuthenticate()
     {
-        $expected = array(
+        $expected = [
             'id' => 1,
             'username' => 'Mariano'
-        );
+        ];
 
         $result = $this->auth->authenticate($this->request, $this->response);
         $this->assertFalse($result);
@@ -153,5 +153,4 @@ class CookieAuthenticateTest extends TestCase
         $resultFalse = $this->registry->Cookie->check('CookieAuth');
         $this->assertFalse($resultFalse);
     }
-
 }
