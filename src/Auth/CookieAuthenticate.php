@@ -20,6 +20,11 @@ class CookieAuthenticate extends BaseAuthenticate
     public function __construct(ComponentRegistry $registry, array $config = [])
     {
         $this->_registry = $registry;
+        $this->config([
+            'cookie' => [
+                'name' => 'CookieAuth'
+            ]
+        ]);
         $this->config($config);
     }
 
@@ -39,7 +44,7 @@ class CookieAuthenticate extends BaseAuthenticate
             throw new \RuntimeException('You need to load the CookieComponent.');
         }
 
-        $cookies = $this->_registry->Cookie->read('CookieAuth');
+        $cookies = $this->_registry->Cookie->read($this->_config['cookie']['name']);
         if (empty($cookies)) {
             return false;
         }
@@ -79,6 +84,6 @@ class CookieAuthenticate extends BaseAuthenticate
      */
     public function logout(Event $event, array $user)
     {
-        $this->_registry->Cookie->delete('CookieAuth');
+        $this->_registry->Cookie->delete($this->_config['cookie']['name']);
     }
 }
